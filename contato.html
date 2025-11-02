@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Abigail Cecília</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style-contato.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Abigail <span>Cecília</span></h1>
+    
+    <button class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">
+      <i class="fas fa-adjust"></i> Alternar Tema
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <h2>Entre em <span>Contato</span></h2>
+    <p> Me chame por aqui 👇</p>
+  </section>
+
+  <!-- FORM CONTATO -->
+  <section class="contact">
+    <div class="contact-container">
+
+      <div class="contact-info">
+        <h3>Redes & Contato</h3>
+        <p><i class="fas fa-envelope"></i> t.cristina@hotmail.com</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/553171536509" target="_blank">+55 31 97153-6509</a></p>
+
+        <div class="icones-redes">
+        
+          <a href="http://www.linkedin.com/in/abigail-corrêa-04196a390" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Envie uma Mensagem</h3>
+        <form id="contactForm">
+  <input type="text" id="name" placeholder="Seu nome" required />
+  <input type="email" id="email" placeholder="Seu email" required />
+  <textarea id="message" placeholder="Sua mensagem" required></textarea>
+  <button type="submit">Enviar no WhatsApp</button>
+</form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Marcos Henrique. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    const nome = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('message').value;
+
+    const texto = `Olá! Me chamo *${nome}*.\n\nEmail: *${email}*\n\nMensagem:\n${mensagem}`;
+    const numero = '5531991317932'; // <-- seu número com DDI e DDD sem + nem espaços
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, '_blank'); // Abre em nova aba
+  });
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
